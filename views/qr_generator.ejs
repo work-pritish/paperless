@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="/stylesheets/materialize.min.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="/stylesheets/usersheet.css">
+    <link type="text/css" rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!--optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My dashboard</title>
+    <style>
+        header,
+        main,
+        footer,
+        .content {
+            padding-left: 300px;
+        }
+
+        @media only screen and (max-width : 992px) {
+
+            header,
+            main,
+            footer,
+            .content {
+                padding-left: 0;
+            }
+        }
+
+        .side-nav .user-view .circle,
+        .side-nav .userView .circle {
+
+            margin-left: 25%;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="black">
+        <div class="nav wrapper">
+            <div class="container">
+                <a href="" class="button-collapse show-on-large" data-activates="sidenav"><i
+                        class="material-icons">menu</i></a>
+                <ul class="right collection hide-on-small-and-down" style="margin:0px;
+          border: 0px solid transparent">
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <ul class="side-nav fixed" id="sidenav">
+        <li>
+            <div class="user-view">
+                <div class="background">
+                    <img src="" alt="" class="responsive-img">
+                </div>
+                <a href="">
+                    <img src="/images/avatar.png" alt="" class="circle">
+                </a>
+                <span class="white-text name"><%= user %></span>
+
+            </div>
+        </li>
+
+        <div class="divider"></div>
+        <li>
+            <a href="/home"><i class="fa fa-home fa-2x white-text" aria-hidden="true"></i>
+                <div class="side_text">Home</div>
+            </a>
+        </li>
+        <div class="divider"></div>
+        <li>
+            <a href="/generate_qr"><i class="fa fa-qrcode fa-2x white-text"></i>
+                <div class="side_text">QRcode</div>
+            </a>
+        </li>
+        <div class="divider"></div>
+        <li>
+            <a href="#"><i class="fa fa-cogs fa-2x white-text"></i>
+                <div class="side_text">Settings</div>
+            </a>
+        </li>
+        <div class="divider"></div>
+        <li>
+            <a href="/auth/logout"><i class="fa fa-sign-out white-text fa-2x"></i>
+                <div class="side_text">Logout</div>
+            </a>
+        </li>
+        </div>
+    </ul>
+    <div class="div_create card blue-white darken-1">
+        <div class="row">
+            <div class="col m6">
+                <iframe src="/qr" width="400px" height="400px" class="qr"></iframe>
+            </div>
+            <br>
+            <br>
+            <div class="col m6" style="font-size:5vw;"">
+               <h4> This is the generated QRcode of your form. Use this for scanning purpose </h4><br>
+                <a href="/home" class="btn-large waves-effect waves-light"><i class="material-icons right">send</i>BACK TO YOUR FORM</a>
+            </div>
+
+        </div>
+
+    </div>
+    <script src="/javascripts/jquery.js"></script>
+    <script src="/javascripts/materialize.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.button-collapse').sideNav();
+        });
+    </script>
+</body>
+
+</html>

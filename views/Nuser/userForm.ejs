@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!--Import materialize.css-->
+  <link type="text/css" rel="stylesheet" href="/stylesheets/materialize.min.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="/stylesheets/usersheet.css">
+  <link type="text/css" rel="stylesheet"
+    href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!--optimized for mobile-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My dashboard</title>
+  <style>
+    header,
+    main,
+    footer,
+    .content {
+      padding-left: 300px;
+    }
+
+    @media only screen and (max-width : 992px) {
+
+      header,
+      main,
+      footer,
+      .content {
+        padding-left: 0;
+      }
+    }
+
+    .side-nav .user-view .circle,
+    .side-nav .userView .circle {
+
+      margin-left: 25%;
+    }
+    .hide{
+      display: none;
+    }
+    .btn-floating.btn-large {
+    width: 70px;
+    border: 2px solid white;
+    height: 70px;
+}
+.side-nav .user-view .circle, .side-nav .userView .circle {
+    height: 100px;
+    width: 100px;
+}
+  </style>
+</head>
+
+<body>
+  <nav class="black">
+    <div class="nav wrapper">
+      <div class="container">
+        <a href="" class="button-collapse show-on-large" data-activates="sidenav"><i class="material-icons">menu</i></a>
+        <ul class="right collection hide-on-small-and-down" style="margin:0px;
+      border: 0px solid transparent">
+
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <ul class="side-nav fixed" id="sidenav">
+    <li>
+      <div class="user-view">
+        <div class="background">
+          <img src="" alt="" class="responsive-img">
+        </div>
+        <a href="">
+          <img src="/images/avatar.png" alt="" class="circle">
+        </a>
+        <span class="white-text name">USER : <%= user.email %></span>
+        <span class="white-text name">DETAILS : <%= user.date_created %></span>
+      </div>
+    </li>
+
+    <div class="divider"></div>
+    <li>
+      <a href="/home"><i class="fa fa-home fa-2x white-text" aria-hidden="true"></i>
+        <div class="side_text">Home</div>
+      </a>
+    </li>
+    <div class="divider"></div>
+    <li>
+      <a href="/generate_qr"><i class="fa fa-qrcode fa-2x white-text"></i>
+        <div class="side_text">QRcode</div>
+      </a>
+    </li>
+    <div class="divider"></div>
+    <li>
+      <a href="#"><i class="fa fa-cogs fa-2x white-text"></i>
+        <div class="side_text">Settings</div>
+      </a>
+    </li>
+    <div class="divider"></div>
+    <li>
+      <a href="/auth/logout"><i class="fa fa-sign-out white-text fa-2x"></i>
+        <div class="side_text">Logout</div>
+      </a>
+    </li>
+    </div>
+  </ul>
+  <div class="div_create card blue-white darken-1">
+    <% if (checker == 0) { %>
+    <div class="row">
+      <form class="col s12" method="POST">
+        <h5>REQUESTING FORM</h5>
+        <div class="divider"></div><br>
+        <div class="row hide">
+          <div class="input-field col s6">
+            <input type="text" name="user_id" required value="<%= user._id %>" readonly>
+            <label for="user_id">UserID</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <input type="text" name="fullname" required required>
+            <label for="fullname">Full name</label>
+          </div>
+          <div class="input-field col s6">
+            <input type="text" name="scholar" required required>
+            <label for="scholar">Scholar Number</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <input type="text" name="enrol" required required>
+            <label for="enrol">Enrollment Number</label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="input-field col s6">
+            <input type="text" name="phone" required required>
+            <label for="phone">Phone</label>
+          </div>
+        </div>
+        <button class="btn waves-effect waves-light btn-large" type="submit">Submit
+          <i class="material-icons right">send</i>
+        </button>
+      </form>
+    </div>
+    <%} else { %>
+    <div class="row">
+      <form class="col s12">
+        <h5><b>YOUR FORM</b></h5>
+        <div class="divider"></div><br>
+        <input class="hide" type="text" value="<%= user._id %>" readonly>
+        <div class="row">
+          <div class="input-field col s6">
+            <input type="text" name="fullname" value="<%= data.full_name %>" readonly>
+          </div>
+          <div class="input-field col s6">
+            <input type="text" name="scholar" value="<%= data.scholar %>" readonly>
+          </div>
+        </div>
+        <div class="row">
+          <input type="text" name="enrol" value="<%= data.enr %>" readonly>
+        </div>
+        <div class="row">
+          <input type="text" name="phone" value="<%= data.phone %>" readonly>
+        </div>
+      </form>
+    </div>
+    <!--
+    <div class="div_create2 card blue-white darken-1 row" id="btn-3">
+      <a class="btn-large blue col s12 m6 l3"><i class="fa fa-pencil-square-o"></i> EDIT</a>
+      <a class="btn-large modal-trigger red col s12 m6 l3" data-target="modal1"><i class="fa fa-trash"></i> DELETE</a>
+      <a href="/generate_qr" class="btn-large col s12 m6 l3"><i class="fa fa-qrcode"></i> VIEW QR</a>
+    </div>
+-->
+    <div class="fixed-action-btn">
+      <a class="btn-floating btn-large blue">
+        <i class="large material-icons">mode_edit</i>
+      </a>
+      <ul>
+        <li><a class="btn-floating red modal-trigger" data-target="modal2"><i class="fa fa-pencil-square-o"></i></a></li>
+        <li><a class="btn-floating modal-trigger yellow darken-1" data-target="modal1"><i class="fa fa-trash"></i></a></li>
+        <li><a href="/generate_qr" class="btn-floating green"><i class="fa fa-qrcode"></i></a></li>
+      </ul>
+    </div>
+
+    <!-- Modal Structure for delete confirmation -->
+    <div id="modal1" class="modal">
+      <div class="modal-content">
+        <h4>DELETING YOUR FORM</h4>
+        <p>Are you sure about deleting your form?</p>
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class="btn modal-close">NO</a>
+        <a href="/delete_form/<%= data._id %>" class="btn">YES</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Structure for EDITING -->
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+      <h4>EDITING YOUR FORM</h4>
+      <div class="row">
+        <form class="col s12" method="POST" action="/edit">
+          
+          <div class="divider"></div><br>
+          <input name = "user_id" class="" type="text" value="<%= user._id %>" readonly>
+          <div class="row">
+            <div class="input-field col s6">
+              <input type="text" name="fullname" value="<%= data.full_name %>">
+            </div>
+            <div class="input-field col s6">
+              <input type="text" name="scholar" value="<%= data.scholar %>">
+            </div>
+          </div>
+          <div class="row">
+            <input type="text" name="enrol" value="<%= data.enr %>">
+          </div>
+          <div class="row">
+            <input type="text" name="phone" value="<%= data.phone %>">
+          </div>
+          <p>Are you sure about EDITING your form?</p>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#" class="btn modal-close">NO</a>
+      <button class="btn waves-effect waves-light btn" type="submit">Submit
+        <i class="material-icons right">send</i>
+      </button>
+    </div>
+  </form>
+  </div>
+</div>
+
+  <!--break point in form where just a message for floating btn is there-->
+  <div class="div_create card blue-white darken-1">
+    <a class="btn black"><i class="fa fa-2x fa-arrow-right"></i> TAP ON BLUE FLOATING BUTTON FOR MORE OPTIONS ON FORM</a>
+  </div>
+  <% } %>
+  
+
+
+  <script src="/javascripts/jquery.js"></script>
+  <script src="/javascripts/materialize.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.button-collapse').sideNav();
+    });
+    $(document).ready(function () {
+      $('.modal').modal();
+    });
+  </script>
+
+</body>
+
+</html>

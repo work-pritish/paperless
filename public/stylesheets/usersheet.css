@@ -1,0 +1,51 @@
+body{
+    margin: 0;
+    padding: 0;
+    background: url(/images/back.gif);
+    font-family: sans-serif;
+    background-position: center center; 
+    background-repeat: no-repeat; 
+    background-attachment: fixed; 
+    background-size: cover; 
+    background-color: #464646; 
+  }
+  #sidenav{
+    background: rgb(2, 8, 41);
+  }
+  .side_text{
+    color: white;
+  }
+.div_create{
+    margin-left: 25%;
+    margin-top:5%;    
+    margin-right: 10%;
+    padding: 20px;
+    box-shadow: 15px 15px 8px rgba(0, 0, 0, 0.541);
+}
+@media(max-width: 600px)
+{
+  .div_create{
+    margin-left: 5%;
+  }
+  .qr{
+    height: 250px;
+    width: 250px;
+  }
+}
+.div_create2{
+  margin-left: 0%;
+  margin-top:5%;    
+  margin-right: 10%;
+  padding: 20px;
+  box-shadow: 15px 15px 8px rgba(0, 0, 0, 0.541);
+}
+@media(max-width: 600px)
+{
+.div_create2{
+  margin-left: 5%;
+}
+.qr{
+  height: 250px;
+  width: 250px;
+}
+}

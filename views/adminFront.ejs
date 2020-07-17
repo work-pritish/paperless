@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="/stylesheets/materialize.min.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="/stylesheets/usersheet.css">
+    <link type="text/css" rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script type="text/javascript" src="https://rawgit.com/schmich/instascan-builds/master/instascan.min.js" ></script>	
+  
+    <!--optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My dashboard</title>
+    <style>
+        header,
+        main,
+        footer,
+        .content {
+            padding-left: 300px;
+        }
+
+        @media only screen and (max-width : 992px) {
+
+            header,
+            main,
+            footer,
+            .content {
+                padding-left: 0;
+            }
+        }
+
+        .side-nav .user-view .circle,
+        .side-nav .userView .circle {
+
+            margin-left: 25%;
+        }
+        .side-nav .user-view .circle, .side-nav .userView .circle {
+         height: 100px;
+         width: 100px;
+}
+    </style>
+</head>
+
+<body>
+    <nav class="black">
+        <div class="nav wrapper">
+            <div class="container">
+                <a href="" class="button-collapse show-on-large" data-activates="sidenav"><i
+                        class="material-icons">menu</i></a>
+                <ul class="right collection hide-on-small-and-down" style="margin:0px;
+          border: 0px solid transparent">
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <ul class="side-nav fixed" id="sidenav">
+        <li>
+            <div class="user-view">
+                <div class="background">
+                    <img src="" alt="" class="responsive-img">
+                </div>
+                <a href="">
+                    <img src="/images/avatar.png" alt="" class="circle">
+                </a>
+                <span class="white-text name">AUTHORIZED ADMIN PROFILE</span>
+                <br>
+            </div>
+        </li>
+
+        <div class="divider"></div>
+        <li>
+            <a href="/admin"><i class="fa fa-home fa-2x white-text" aria-hidden="true"></i>
+                <div class="side_text">Home</div>
+            </a>
+        </li>
+        
+        <div class="divider"></div>
+        <li>
+            <a href="/"><i class="fa fa-sign-out white-text fa-2x"></i>
+                <div class="side_text">BACK</div>
+            </a>
+        </li>
+        </div>
+    </ul>
+    <div class="div_create card blue-white darken-1">
+        <h4>SCANNER</h4>
+        
+        <blockquote> CLICK ON THE BUTTON FOR SCANNING QR </blockquote><br><br>
+        <a class="btn modal-trigger" data-target="modal1" onclick="display()">SCANNER</a>
+        <div id="modal1" class="modal">
+            <div class="modal-content">
+                <video id="preview" style="width: 100%; height: 100%;"></video>
+            </div>
+            <div class="modal-footer">
+              
+            </div>
+          </div>
+        </div>
+        
+    </div>
+    <script src="/javascripts/jquery.js"></script>
+    <script src="/javascripts/materialize.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('.button-collapse').sideNav();
+        });
+        $(document).ready(function () {
+      $('.modal').modal();
+      
+    });
+      
+        function display()
+        {
+            let scanner = new Instascan.Scanner(
+            {
+                video: document.getElementById('preview')
+            }
+        );
+        scanner.addListener('scan', function(content) {
+            //alert('this is the encoded text ' + content);
+            window.location.assign(content)
+            //window.open(content, "_blank");
+        });
+        Instascan.Camera.getCameras().then(cameras => 
+        {
+            if(cameras.length > 0){
+                scanner.start(cameras[0]);
+            } else {
+                console.error("camera problem");
+            }
+        }); 
+        }
+    </script>
+</body>
+
+</html>
