@@ -7,20 +7,28 @@
     <title>paperless.io</title>
     <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
     <style type="text/css">
+        body {
+            scroll-behavior: smooth;
+        }
+
         @media (min-width: 1024px) {
             .top-navbar {
                 display: inline-flex !important;
             }
         }
 
-        body {
-            scroll-behavior: smooth;
+        .hoverbtn {
+            background: linear-gradient(57deg, rgb(5, 248, 228), rgb(3, 60, 245));
+        }
+
+        .hoverbtn:hover {
+            background: linear-gradient(57deg, rgb(3, 60, 245), rgb(5, 248, 228));
         }
     </style>
 </head>
 
 <body>
-    <div class="bg-gray-300 sm:h-screen">
+    <div class="bg-gray-900 sm:h-screen">
         <nav class="flex items-center bg-gray-900 p-3 flex-wrap">
             <a href="#" class="p-2 mr-4 inline-flex items-center">
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"
@@ -61,9 +69,10 @@
                 </div>
             </div>
         </nav>
-        <div class="bg-gray-900 h-12 sm:h-32 sm:mx-16 opacity-75 rounded-b-lg"></div>
+        <div class="h-12 sm:h-32 sm:mx-16 opacity-75 rounded-b-lg"
+            style="background: linear-gradient(57deg,rgb(0, 0, 0),rgb(136, 136, 136));"></div>
         <div class="flex flex-col font-sans sm:-mt-16 h-full"
-            style="background: url('https://wallup.net/wp-content/uploads/2016/05/26/352920-abstract.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center;">
+            style="background: url('https://ak.picdn.net/shutterstock/videos/31208530/thumb/1.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center;">
             <div class="container mx-auto mt-2 px-5 bg-white shadow-2xl z-10">
                 <main class="flex flex-col-reverse sm:flex-row jusitfy-between items-center py-12">
                     <div class="sm:w-2/5 flex flex-col items-center sm:items-start text-center sm:text-left">
@@ -74,8 +83,8 @@
                         <p class="text-gray-600 leading-relaxed mb-12">Saves paper, saves time, easy to use. Helpful in
                             queue processing. User can fill the respective form of an organisation and can easily
                             generate a unique QRcode which is helpful during queue processing</p>
-                        <a href="/auth/login"
-                            class="bg-blue-300 hover:bg-blue-500 py-6 px-6 text-white text-xl font-bold rounded-lg">GETTING
+                        <a href="/auth/login" class="hoverbtn py-6 px-6 text-white text-xl font-bold rounded-lg"
+                            style="">GETTING
                             STARTED</a>
                         <a href="/admin"
                             class="mt-8 bg-gray-900 hover:bg-black py-3 px-6 text-white text-lg font-bold rounded-lg">ADMIN
@@ -89,76 +98,86 @@
             </div>
         </div>
     </div>
-
-    <div id="pros" class="bg-gray-300 mt-16">
-        <div class="flex flex-wrap sm:mx-48">
-            <div class="w-full md:w-1/3 lg:w-1/3 xl:w-1/3 mb-4 sm:p-5 px-5 py-2 mt-8 sm:m-0 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
-                <div class="bg-white shadow-2xl rounded-lg mb-6 tracking-wide">
-                    <div class="md:flex-shrink-0">
+    <!-- pros below -->
+    <div class="mt-2 sm:mt-32 sm:h-screen px-2 sm:px-32 sm:pt-16" id="pros"
+        style="background: url('https://ak.picdn.net/shutterstock/videos/31208530/thumb/1.jpg'); background-repeat: no-repeat; background-size: cover; background-position: center;">
+        <div class="flex flex-wrap">
+            <div
+                class="w-full sm:w-1/3 md:w-1/3 lg:w-1/3 xl:w-1/3 p-8 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                <div class="h-full">
+                    <div class="h-1/2">
                         <img src="/images/save_paper.png" alt="mountains" class="w-full h-64 rounded-lg rounded-b-none">
                     </div>
-                    <div class="px-4 py-2 mt-2 bg-gray-900 text-white">
+                    <div class="h-1/2 bg-gray-900 p-5 text-white">
                         <div class="text-xl font-bold text-center p-2">SAVES PAPER</div>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum sunt, nesciunt eveniet id omnis
-                        eaque laboriosam recusandae. Sit magni veniam nemo ea rem expedita, odio, repellendus facere
-                        sequi, possimus blanditiis?
+                        Organisational forms can be filled through your own device smartphone, tablets, portable-pc thus
+                        saves papers and its cost
                     </div>
                 </div>
             </div>
-            <div class="w-full md:w-1/3 lg:w-1/3 xl:w-1/3 mb-4 sm:p-5 px-5 py-2 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
-                <div class="bg-white shadow-2xl rounded-lg mb-6 tracking-wide">
-                    <div class="md:flex-shrink-0">
+            <div
+                class="w-full sm:w-1/3 md:w-1/3 lg:w-1/3 xl:w-1/3 p-8 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                <div class="">
+                    <div class="h-1/2">
                         <img src="https://blog.marshallinstitute.com/content/images/2020/03/AdobeStock_283114904--Converted--1.png"
                             alt="mountains" class="w-full h-64 rounded-lg rounded-b-none">
                     </div>
-                    <div class="px-4 py-2 mt-2 bg-gray-900 text-white">
+                    <div class="h-1/2 bg-gray-900 p-5 text-white">
                         <div class="text-xl font-bold text-center p-2">SAVES TIME</div>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum sunt, nesciunt eveniet id omnis
-                        eaque laboriosam recusandae. Sit magni veniam nemo ea rem expedita, odio, repellendus facere
-                        sequi, possimus blanditiis?
+                        <div class=""> Easy to use, no need to worry about pen and place to write. Device keyboard can
+                            be use
+                            effectively thus it saves time.
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="w-full md:w-1/3 lg:w-1/3 xl:w-1/3 mb-4 sm:p-5 px-5 py-2 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
-                <div class="bg-white shadow-2xl rounded-lg mb-6 tracking-wide">
-                    <div class="md:flex-shrink-0">
+            <div
+                class="w-full sm:w-1/3 md:w-1/3 lg:w-1/3 xl:w-1/3 p-8 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                <div class="">
+                    <div class="h-1/2">
                         <img src="https://www.divineit.net/media/original_images/Cyber-Security_C20hr7G.png"
                             alt="mountains" class="w-full h-64 rounded-lg rounded-b-none">
                     </div>
-                    <div class="px-4 py-2 mt-2 bg-gray-900">
+                    <div class="h-1/2 p-5 bg-gray-900">
                         <div class="text-xl font-bold text-center text-white p-2">SECURE</div>
                         <span class="text-white">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum sunt, nesciunt eveniet id
-                            omnis
-                            eaque laboriosam recusandae. Sit magni veniam nemo ea rem expedita, odio, repellendus facere
-                            sequi, possimus blanditiis?
+                            Form filled by a user is encoded in the form of QRcode which acts as a public key to the
+                            user and that can be used later.
                         </span>
                     </div>
                 </div>
             </div>
+
         </div>
     </div>
 
     <!-- contact page below -->
 
-    <div id="contact" class="flex justify-center sm:h-screen px-8 py-4 sm:px-32 sm:py-16 bg-gray-500">
-        <div class="w-full h-full flex flex-wrap shadow-2xl">
-            <div class="hidden sm:block w-full sm:w-1/2">
-                <img class="w-full h-full" src="https://image.freepik.com/free-vector/man-with-headphones-microphone-with-computer_113065-136.jpg">
+    <div id="contact" class="flex justify-center sm:h-screen px-8 py-4 sm:px-32 sm:py-16 bg-gray-300">
+        <div class="w-full h-full flex flex-wrap shadow-xl">
+            <div class="hidden sm:block w-full h-full sm:w-1/2">
+                <img class="w-full h-full"
+                    src="https://image.freepik.com/free-vector/man-with-headphones-microphone-with-computer_113065-136.jpg">
             </div>
-            <div class="w-full sm:w-1/2 bg-gray-900">
-                <div class="mx-4 mt-4 p-2 bg-white font-bold text-4xl text-center shadow-lg">CONTACT</div>
-                <div class="m-8 mx-12 text-xl">
-                    <div class="rounded-full flex p-5 bg-gray-300 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
-                        <img src="https://icons.iconarchive.com/icons/dtafalonso/android-l/256/Gmail-icon.png" class="w-8 h-8 mr-4">
+            <div class="w-full h-full sm:w-1/2 bg-white border-8 border-gray-900">
+                <div class="mx-4 mt-4 p-2 bg-gray-900 text-white font-bold text-4xl text-center">CONTACT</div>
+                <div class="m-8 sm:mx-12 mx-4 text-xl">
+                    <div
+                        class=" flex p-5 bg-gray-500 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                        <img src="https://icons.iconarchive.com/icons/dtafalonso/android-l/256/Gmail-icon.png"
+                            class="w-8 h-8 mr-4">
                         workpritish@gmail.com
                     </div>
-                    <div class="rounded-full mt-4 flex p-5 bg-gray-400 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
-                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Linkedin_icon.svg/1200px-Linkedin_icon.svg.png" class="w-8 h-8 mr-4">
+                    <div
+                        class=" mt-4 flex p-5 bg-gray-500 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Linkedin_icon.svg/1200px-Linkedin_icon.svg.png"
+                            class="w-8 h-8 mr-4">
                         <a href="https://www.linkedin.com/in/pritish-patel-6b5a78191/">Linkedin</a>
                     </div>
-                    <div class="rounded-full mt-4 flex p-5 bg-gray-500 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
-                        <img src="https://cdn0.iconfinder.com/data/icons/octicons/1024/mark-github-512.png" class="w-8 h-8 mr-4">
+                    <div
+                        class=" mt-4 flex p-5 bg-gray-500 transition duration-500 ease-in-out transform hover:-translate-y-1 hover:scale-110">
+                        <img src="https://cdn0.iconfinder.com/data/icons/octicons/1024/mark-github-512.png"
+                            class="w-8 h-8 mr-4">
                         <a href="https://github.com/work-pritish">GITHUB</a>
                     </div>
                 </div>
